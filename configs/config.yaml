@@ -1,0 +1,49 @@
+Server:
+  RunMode: debug
+  HttpPort: 9090
+  ReadTimeout: 60
+  WriteTimeout: 60
+  
+App:
+  DefaultPageSize: 10 #默认页大小
+  MaxPageSize: 100
+  LogSavePath: storage/logs #日志路径
+  LogFileName: app
+  LogFileExt: .log
+  UploadSavePath: storage/uploads #上传文件的最终保存目录
+  UploadServerUrl: http://192.168.172.100:9090/static #用于展示的文件服务地址
+  UploadImageMaxSize: 5 #上传文件所允许的最大空间大小5MB
+  UploadImageAllowExts: 
+    .jpg,
+    .jpeg,
+    .png,
+  #上传文件所允许的文件后缀
+  
+Database:
+  DBType: mysql
+  Username: root  # 填写你的数据库账号
+  Password: root  # 填写你的数据库密码
+  Host: 192.168.172.10:3306
+  DBName: customer
+  DBName2: shop
+ # TablePrefix: blog_
+  Charset: utf8mb4
+  ParseTime: True
+  MaxIdleConns: 64 #空闲连接
+  MaxOpenConns: 300 #最大连接数
+  
+JWT:
+  Secret:  123
+  Issuer:  123
+  Expire:  7200 #有效时长6小时
+  
+Redis:
+  Addr:  192.168.172.10:6379
+  DB:  0
+  Password:  123
+  
+RabbitMQ:
+  Addr:      192.168.172.10:5672
+  Username:  guest
+  Password:  guest
+  Head:      amqp

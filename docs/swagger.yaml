@@ -1,0 +1,70 @@
+definitions:
+  errcode.Error:
+    properties:
+      code:
+        type: integer
+      details:
+        items:
+          type: string
+        type: array
+      msg:
+        type: string
+    type: object
+  model.Login:
+    properties:
+      customerId:
+        type: integer
+      loginname:
+        type: string
+      modifiedTime:
+        type: string
+      password:
+        type: string
+      userStats:
+        type: integer
+    type: object
+info:
+  contact: {}
+  description: 耗费时间较长才写出来的毕业设计
+  license: {}
+  termsOfService: github.com/lemon997/lemonMall
+  title: 商城系统
+  version: "1.0"
+paths:
+  /api/v1/Login:
+    post:
+      parameters:
+      - description: 登录名
+        in: body
+        name: loginname
+        required: true
+        schema:
+          type: string
+      - description: 密码
+        in: body
+        name: password
+        required: true
+        schema:
+          type: string
+      - description: JWT
+        in: body
+        name: jwt
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Login'
+        "400":
+          description: 请求错误
+          schema:
+            $ref: '#/definitions/errcode.Error'
+        "401":
+          description: JWT验证失败
+          schema:
+            $ref: '#/definitions/errcode.Error'
+      summary: 实现登录功能
+swagger: "2.0"

@@ -1,0 +1,108 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "耗费时间较长才写出来的毕业设计",
+        "title": "商城系统",
+        "termsOfService": "github.com/lemon997/lemonMall",
+        "contact": {},
+        "license": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/v1/Login": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "实现登录功能",
+                "parameters": [
+                    {
+                        "description": "登录名",
+                        "name": "loginname",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "密码",
+                        "name": "password",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "JWT",
+                        "name": "jwt",
+                        "in": "body",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.Login"
+                        }
+                    },
+                    "400": {
+                        "description": "请求错误",
+                        "schema": {
+                            "$ref": "#/definitions/errcode.Error"
+                        }
+                    },
+                    "401": {
+                        "description": "JWT验证失败",
+                        "schema": {
+                            "$ref": "#/definitions/errcode.Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "errcode.Error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "details": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "msg": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.Login": {
+            "type": "object",
+            "properties": {
+                "customerId": {
+                    "type": "integer"
+                },
+                "loginname": {
+                    "type": "string"
+                },
+                "modifiedTime": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "userStats": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
