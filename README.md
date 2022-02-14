@@ -1,19 +1,25 @@
 Go语言实现化妆品商场后端
 ====
+前端使用vue3+vue-cli4+vant3实现，地址如下
+```
+https://github.com/lemon997/lemonMall-front
+```
+
+项目已经上线，地址如下
+```
+http://120.79.132.3
+```
 
 后端工具
 ----
-
 gin, Nginx, Redis, MySQL, RabbitMQ<br>
 
 实现功能
 ---
-
 首页, 分类, 购物车, 个人信息, 用户地址管理, 用户收藏, 上传头像, 登录注册, 生产订单, 伪支付, 分类页面排序, 订单详情, 商品详情, 支付失败且过期的订单实现<br>
 
 实现思路
 ---
-
 JWT身份验证, 雪花算法生成订单编号, RabbitMQ实现过期订单,Redis的Zset用作商品排序<br>
 
 
@@ -24,8 +30,13 @@ go-programming-tour-book/blog-service<br>
 
 使用
 ---
-go mod vendor<br>
-go run main.go<br>
+```
+go mod vendor
+```
+
+```
+go run main.go
+```
 
 目录结构
 ---
@@ -181,6 +192,5 @@ go run main.go<br>
 └── storage
     └── logs
         └── app.log
-
 ```
 
