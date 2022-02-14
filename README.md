@@ -1,4 +1,4 @@
-化妆品商场
+Go语言实现化妆品商场后端
 ====
 
 后端工具
@@ -24,9 +24,163 @@ go-programming-tour-book/blog-service<br>
 
 使用
 ---
-go mod vendor
-go run main.go
+go mod vendor<br>
+go run main.go<br>
 
 目录结构
 ---
+```
+├── build
+│   └── lemonMall
+├── common
+│   ├── app
+│   │   ├── app.go
+│   │   └── pagination.go
+│   ├── authJWT
+│   │   └── authJWT.go
+│   ├── convert
+│   │   └── convert.go
+│   ├── errcode
+│   │   └── errcode.go
+│   ├── logger
+│   │   └── logger.go
+│   ├── setting
+│   │   ├── section.go
+│   │   └── setting.go
+│   ├── upload
+│   │   └── file.go
+│   └── util
+│       ├── byteSlipeAndString.go
+│       ├── isSame.go
+│       ├── md5.go
+│       ├── priceFormatConversion.go
+│       └── timeFromat.go
+├── configs
+│   └── config.yaml
+├── docs
+│   ├── docs.go
+│   ├── swagger.json
+│   └── swagger.yaml
+├── global
+│   ├── db.go
+│   ├── mq.go
+│   ├── redis.go
+│   ├── setting.go
+│   ├── snowflake.go
+│   └── snowflake_test.go
+├── go.mod
+├── go.sum
+├── internal
+│   ├── dao
+│   │   ├── address.go
+│   │   ├── categoryChildren.go
+│   │   ├── categoryChildren_test.go
+│   │   ├── category.go
+│   │   ├── category_test.go
+│   │   ├── collect.go
+│   │   ├── dao.go
+│   │   ├── goodsResponse.go
+│   │   ├── loginDB.go
+│   │   ├── order.go
+│   │   ├── products.go
+│   │   ├── products_test.go
+│   │   ├── recommend.go
+│   │   └── swipe.go
+│   ├── middleware
+│   │   └── jwt.go
+│   ├── model
+│   │   ├── address.go
+│   │   ├── cart.go
+│   │   ├── categoryChildren.go
+│   │   ├── category.go
+│   │   ├── collect.go
+│   │   ├── goodsResponse.go
+│   │   ├── login.go
+│   │   ├── model.go
+│   │   ├── mq.go
+│   │   ├── order.go
+│   │   ├── products.go
+│   │   ├── recommend.go
+│   │   ├── redisKey.go
+│   │   └── swipe.go
+│   ├── mq
+│   │   ├── client.go
+│   │   ├── consumer
+│   │   │   └── consumer.go
+│   │   ├── delayqueue
+│   │   │   └── mysqlDelay.go
+│   │   ├── messagequeue
+│   │   │   └── mysqlReduce.go
+│   │   └── producer
+│   │       └── producer.go
+│   ├── queueservice
+│   │   ├── mqservice.go
+│   │   ├── order.go
+│   │   ├── products.go
+│   │   └── queueReceiver.go
+│   ├── redisDao
+│   │   ├── cart.go
+│   │   ├── delayQueue.go
+│   │   ├── errors.go
+│   │   ├── order.go
+│   │   ├── redisDao.go
+│   │   ├── redisGoodDetail.go
+│   │   ├── redisGoodList.go
+│   │   ├── redisGoodList_test.go
+│   │   ├── redisRecommend.go
+│   │   ├── redisSwipe.go
+│   │   ├── redisToken.go
+│   │   └── stock.go
+│   ├── routers
+│   │   ├── api
+│   │   │   └── v1
+│   │   │       ├── category.go
+│   │   │       ├── getGoodDate.go
+│   │   │       ├── getGoodsDetail.go
+│   │   │       ├── login.go
+│   │   │       ├── recommend.go
+│   │   │       ├── register.go
+│   │   │       ├── swipe.go
+│   │   │       ├── tabGoods.go
+│   │   │       ├── uploading
+│   │   │       │   └── file.go
+│   │   │       └── user
+│   │   │           ├── address.go
+│   │   │           ├── cart.go
+│   │   │           ├── collect.go
+│   │   │           ├── getUserName.go
+│   │   │           ├── logout.go
+│   │   │           ├── order.go
+│   │   │           └── updatePwd.go
+│   │   └── router.go
+│   └── service
+│       ├── address.go
+│       ├── auth.go
+│       ├── cart.go
+│       ├── categoryChildren.go
+│       ├── categoryChildrenSortInRedis.go
+│       ├── category.go
+│       ├── collect.go
+│       ├── errors.go
+│       ├── goods.go
+│       ├── login.go
+│       ├── logout.go
+│       ├── modifyInfos.go
+│       ├── order.go
+│       ├── pay.go
+│       ├── products.go
+│       ├── recommend.go
+│       ├── register.go
+│       ├── service.go
+│       ├── stock.go
+│       ├── swipe.go
+│       └── upload.go
+├── LICENSE
+├── main.go
+├── README.md
+└── storage
+    └── logs
+        └── app.log
+
+```
 
