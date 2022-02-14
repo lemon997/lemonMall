@@ -25,11 +25,17 @@ JWT身份验证, 雪花算法生成订单编号, RabbitMQ实现过期订单,Redi
 
 部分代码来源
 ---
-煎鱼大佬写的Go语言编程之旅第二章案例<br>
-go-programming-tour-book/blog-service<br>
+
+煎鱼大佬写的Go语言编程之旅第二章案例，地址如下
+```
+https://github.com/go-programming-tour-book/blog-service
+```
 
 使用
 ---
+
+请配置好configs目录下的配置再启动，根据实际情况更改
+
 ```
 go mod vendor
 ```
