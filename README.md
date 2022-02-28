@@ -44,6 +44,14 @@ go mod vendor
 go run main.go
 ```
 
+
+流程图
+---
+
+订单流程图
+
+![订单流程图](https://github.com/lemon997/lemonMall/blob/master/images/%E8%AE%A2%E5%8D%95%E7%94%9F%E6%88%90%E6%B5%81%E7%A8%8B.JPG)
+
 目录结构
 ---
 ```
